@@ -2,8 +2,7 @@
 from shapely.geometry import Point, LineString, Polygon
 
 def createPointGeom(x_coord, y_coord):
-    point = Point(x_coord, y_coord)
-    return point
+    return Point(x_coord, y_coord)
 
 def createLineGeom(points):
     #Check first if input list really contains Shapely Points
@@ -24,7 +23,7 @@ def createPolyGeom(points):
         print("Input list doesn't contain Shapely Points or coordinates tuples!")
 
 if __name__ == "__main__":
-    point1 = Point(2.2, 5.1)
+    point1 = createPointGeom(2.2, 5.1)
     point2 = Point(2, 6.7)
     point3 = Point(6, 1)
     print("point1: " + str(point1))
