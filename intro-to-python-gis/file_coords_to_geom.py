@@ -9,8 +9,16 @@ travel_times = pd.read_csv("travelTimes_2015_Helsinki.txt",
                            sep=";",
                            usecols=cols)
 
-orig_points = [Point(float(row[0]), float(row[1])) for row in travel_times]
-dest_points = []
+#List origin and destination points
+orig_points = [Point(row[0], row[1]) for i, row in travel_times.iterrows()]
+dest_points = [Point(row[2], row[3]) for i, row in travel_times.iterrows()]
 
+#Create lines using origin and destination points
+lines = [LineString([orig_point, dest_points[i]]) for i, orig_point in enumerate(orig_points)]
 
+def meanDistanceLines(listOfLines):
+    total_distance = 0
+    for line in listOfLines:
+        total_distance += line.length
+    return total_distance/len(listOfLines)
 
