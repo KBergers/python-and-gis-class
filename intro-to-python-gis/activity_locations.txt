@@ -1,0 +1,3 @@
+id;addr
+1;Ruoholahdenkatu 8, 00101 Helsinki, Finland
+2;Hameentie 36-30, 00101 Helsinki, Finland
